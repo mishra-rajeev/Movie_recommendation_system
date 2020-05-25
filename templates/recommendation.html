@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  {% if t== 's' %}
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <h3 style="color:#F90B6D; font-family: 'Open Sans', sans-serif; font-size: 30px; font-weight: 300; line-height: 40px">'{{movie|capitalize}}' is a nice choice!!!! </h3>
+    <h3 style="color:rgb(255, 0, 0); font-family: 'Open Sans', sans-serif; font-size: 25px; font-weight: 300; line-height: 40px">But this movie is not present in our database</span>.</h3>
+    <h3 style="color:#F90B6D; font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: 300; line-height: 40px"> Please enter correct spelling of the movie or check in the IMDB section.</h3>
+  </div>
+
+  {% else %}
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <h1 style="color:#F90B6D; font-family: 'Open Sans', sans-serif; font-size: 30px; font-weight: 300; line-height: 40px">'{{movie|capitalize}}' is a great choice!!!!</h1>
+    <h3 style="color:#F90B6D; font-family: 'Open Sans', sans-serif; font-size: 25px; font-weight: 300; line-height: 40px">You may also like watching following movies:</h3>
+  </div>
+    <ul class="list-group list-group-flush">
+      {% for m in r %}
+        <li class="list-group-item" style="color:rgb(0, 179, 0)"><strong>{{m|capitalize}}</strong></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+{% endblock %}

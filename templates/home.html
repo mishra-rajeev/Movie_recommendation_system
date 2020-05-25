@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body" style= "background: #292929;">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <h1 style=" color: #F90B6D; font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: 900; line-height: 40px; margin: 0 0 16px;">IMDB Movie Recomendation Model</h1>
+                <h3 style=" color: #F90B6D; font-family: 'Open Sans', sans-serif; font-size: 18px; font-weight: 300; line-height: 40px; margin: 0 0 16px;">Search for Hollywood Movies here:</h3>
+                <h3 style=" color: #F90B6D; font-family: 'Open Sans', sans-serif; font-size: 15px; font-weight: 300; line-height: 40px; margin: 0 0 16px;">e.g. The Hangover, Iron Man, The Avengers, Star Trek, Interstellar, Inception, Her, The revenant</h3>
+            </div>
+                <form action="{{url_for('recommend')}}">
+                    <input type="text" name="movie" class="form-control" placeholder="Type a movie name here to get suggestion..." required>
+                    <br>
+                    <input type="submit" class="btn btn-info" value="Enter">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body" style= "background: #292929;">
+                <div class="shadow p-3 mb-5 bg-white rounded">
+                    <h1 style=" color: #F90B6D; font-family: 'Open Sans', sans-serif; font-size: 20px; font-weight: 900; line-height: 40px; margin: 0 0 16px;">Netflix Movie Recomendation Model</h1>
+                    <h3 style=" color: #F90B6D; font-family: 'Open Sans', sans-serif; font-size: 18px; font-weight: 300; line-height: 40px; margin: 0 0 16px;">Search for Bollywood, TV Series and Hollywood Movies here:</h3>
+                    <h3 style=" color: #F90B6D; font-family: 'Open Sans', sans-serif; font-size: 15px; font-weight: 300; line-height: 40px; margin: 0 0 16px;">e.g. Happy New Year, No Entry, Hera Pheri, Colony, Narcos: Mexico, Riverdale, Sherlock, Friends</h3>
+                </div>
+                    <form action="{{url_for('recommendation')}}">
+                        <input type="text" name="film" class="form-control" placeholder="Type a movie name here to get suggestion..." required>
+                        <br>
+                        <input type="submit" class="btn btn-info" value="Enter">
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
